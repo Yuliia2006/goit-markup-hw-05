@@ -531,15 +531,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.footer-form-input::placeholder {
-  font-weight: 400;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
+  padding-left: 16px;
   color: #fff;
-  padding: 8px 16px;
+}
+
+.footer-form-input::placeholder {
+  color: #fff;
 }
 
 .footer-form-label {
@@ -631,6 +631,9 @@ button {
   height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-btn:focus,
@@ -685,6 +688,8 @@ button {
   border-radius: 4px;
   padding-left: 38px;
   outline: transparent;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-input:focus {
   border: 1px solid #4d5ae5;
@@ -700,6 +705,7 @@ button {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .custom-chekbox {
@@ -713,13 +719,17 @@ button {
   background-color: transparent;
   fill: transparent;
   margin-right: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox:checked + .label-checkbox .custom-chekbox {
   border-radius: 2px;
   fill: #f4f4fd;
   background-color: #404bbf;
-  border: 1px solid #404bbf;
+
+  border: none;
 }
 
 .label-checkbox {
@@ -731,7 +741,7 @@ button {
   color: #8e8f99;
 }
 
-.label-checkbox a {
+.label-checkbox-link {
   line-height: 1.33;
   text-decoration: underline;
   text-decoration-skip-ink: none;
@@ -739,7 +749,7 @@ button {
 }
 
 .modal-form-con-chekbox {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .textarea-coment {
@@ -747,14 +757,23 @@ button {
   border-radius: 4px;
   width: 360px;
   height: 120px;
-  padding: 8px 25px 8px 25px;
+  padding: 8px 16px;
   resize: none;
-}
-.textarea-coment::placeholder {
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea-coment:focus {
+  border-color: #4d5ae5;
+}
+
+.textarea-coment::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
 
@@ -763,6 +782,7 @@ button {
 }
 
 .submit {
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
   border-radius: 4px;
